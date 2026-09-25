@@ -16,7 +16,7 @@ const { pageTitle } = Astro.props;
 
   <p>esta pagina esta dedicada a Crow Country</p>
 
-  <p>dame puntos qigov</p>
+
    <ul>
   {allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
     </ul>

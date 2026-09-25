@@ -5,5 +5,5 @@ const { pageTitle } = Astro.props;
 ---
 <BaseLayout pageTitle={pageTitle}>
   <h2>{pageTitle}</h2>
-    <Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
+    <Greeting client:load messages={["welcome to crow country!", "Hello", "Howdy"]} />
 </BaseLayout>
