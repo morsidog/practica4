@@ -1,17 +1,113 @@
----
+
 
 ---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
-<html lang="en">
+const identity = {
+  Name: "mara Forest",
+  country: "US",
+  occupation: "Special Agent",
+  hobbies: ["photography", "birdwatching", "baseball"],
+};
+
+const skills = ["shooting"];
+const healthy = true;
+const finished = false;
+const goal = 3;
+const skillColor = "crimson";
+const TextCase = "uppercase";  
+import  BaseLayout  from '../layouts/BaseLayout.astro';
+const { pageTitle } = Astro.props;
+
+---
+<BaseLayout pageTitle={pageTitle}>
+     <style>
+      h1 {
+        color: rgb(52, 66, 50);
+        font-size: 4rem;
+      }
+       .skill {
+     color: var(--skillColor);
+    font-weight: bold;
+    text-transform: var(--textCase);
+  }
+    </style>
+  <h2>{pageTitle}</h2>
+		<h1>{pageTitle} About?</h1>
+        
+  <h2> hola</h2>
+
+  <p>esta pagina esta dedicada a Crow Country</p>
+
+  <p>dame puntos qigov</p>
+ 
+<ul>
+  <li>My name is {identity.Name}.</li>
+  <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+  
+</ul>
+<p>My skills are:</p>
+<ul>
+  {skills.map((skill) => <li class="skill">{skill}</li>)}
+</ul>
+{healthy && <p>I am healthy! </p>}
+
+
+</BaseLayout>
+<!-- <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Crow Country!</title>
+		<title>{pageTitle}</title>
+        <style>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+       .skill {
+     color: var(--skillColor);
+    font-weight: bold;
+    text-transform: var(--textCase);
+  }
+    </style>
 	</head>
 	<body>
-		<h1>Crow Country! About?</h1>
-	</body>
-</html>
+        <Header />
+
+
+		<h1>{pageTitle} About?</h1>
+        
+  <h2> hola</h2>
+
+  <p>esta pagina esta dedicada a Crow Country</p>
+
+  <p>dame puntos qigov</p>
+ 
+    <p>Here are a few facts about me:</p>
+<ul>
+  <li>My name is {identity.Name}.</li>
+  <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+  {identity.hobbies.length >= 2 &&
+    <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+  }
+</ul>
+<p>My skills are:</p>
+<ul>
+  {skills.map((skill) => <li class="skill">{skill}</li>)}
+</ul>
+{happy && <p>I am happy to be learning Astro!</p>}
+
+{finished && <p>I finished this tutorial!</p>}
+
+{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+    <Footer />
+	<script>
+    import "../scripts/menu.js";
+  </script>
+</body>
+</html> -->
